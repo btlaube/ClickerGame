@@ -3,58 +3,55 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Bot : MonoBehaviour
+public class OldBot : MonoBehaviour
 {
-    private int count;
-    private float cost = 10f;
-    private Image thisBot;
+
+    private static float time = 1f;
+    private int count = 0;
+    private Image thisBotImage;
+
+    public float cost;
+    public float amount;
+    public float discoverAmount;
 
     public Player player;
-    public float time = 1f;
-    public float amount;
-
     public Text costText;
     public Text countText;
-
     public Sprite lit;
     public Sprite shaded;
+
+    public CanvasGroup thisBot;
 
     //public bool unlocked = false;
     enum State {UNDISCOVERED, AVAILABLE, PURCHASED, UNAFFORDABLE};
     State currentState;
 
     void Start() {
-        thisBot = this.GetComponent<Image>();
-        currentState = State.AVAILABLE;
+        currentState = State.UNDISCOVERED;
+        thisBotImage = this.GetComponent<Image>();
         this.costText.text = "$" + this.cost.ToString();
-        //InvokeRepeating("Add", time, time);
+        this.countText.text = count.ToString();
+        thisBot.alpha = 0;
     }
 
     void Update() {
-        /*
-        if(currentState == State.UNDISCOVERED) {
-
-        }
-        */
+        if(player.GetMoney() >= discoverAmount) {
+            thisBot.alpha = 1;
+            currentState = State.AVAILABLE;
+        }        
         if (player.GetMoney() < this.cost) {
             currentState = State.UNAFFORDABLE;
-            thisBot.sprite = shaded;
+            thisBotImage.sprite = shaded;
         }
         else {
             if(count > 0) {
-                currentState = State.PURCHASED;            
+                currentState = State.PURCHASED;
             }
             else {
-                currentState = State.AVAILABLE;  
+                currentState = State.AVAILABLE;
             }
-            thisBot.sprite = lit;
+            thisBotImage.sprite = lit;
         }
-        /*
-        else {
-            currentState = State.AVAILABLE;
-            thisBot.sprite = lit;
-        }
-        */
     }
 
     void Add() {

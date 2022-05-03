@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
             money = PlayerPrefs.GetFloat("money");
             moneyText.text = "$" + (Mathf.Round(money * 100.0f) * 0.01f).ToString();
         }
-    }    
+    }
 
     public float GetMoney() {
         return this.money;
