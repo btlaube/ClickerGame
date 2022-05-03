@@ -10,7 +10,7 @@ public class Click : MonoBehaviour
     public Text money;
 
     void Start() {
-        money.text = "$" + moneyNum.ToString();
+        money.text = "$" + (Mathf.Round(moneyNum * 100.0f) * 0.01f).ToString();
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class Click : MonoBehaviour
 
     public void AddMoney(float amount) {
         moneyNum += amount;
-        money.text = "$" + moneyNum.ToString();
+        money.text = "$" + (Mathf.Round(moneyNum * 100.0f) * 0.01f).ToString();
     }
 
 }
