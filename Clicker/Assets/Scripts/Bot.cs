@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public enum State {UNDISCOVERED, AVAILABLE, PURCHASED, UNAFFORDABLE};
 
 [System.Serializable]
-public class BotClass
+public class Bot
 {
     public string name;
     public float cost;
@@ -22,13 +22,13 @@ public class BotClass
     public Sprite shaded;
     */
 
-    public BotClass(string name, float cost, float amount, float discoverAmount, int count, int state) {
+    public Bot(string name, float cost, float amount, float discoverAmount) {
         this.name = name;
         this.cost = cost;
         this.amount = amount;
         this.discoverAmount = discoverAmount;
-        this.count = count;
-        this.state = (State)state;
+        this.count = 0;
+        this.state = State.UNDISCOVERED;
     }
 
     public string GetName() {
@@ -53,6 +53,10 @@ public class BotClass
 
     public int GetState() {
         return (int)this.state;
+    }
+
+    public void SetCost(float cost) {
+        this.cost = cost;
     }
 
     public void SetCount(int count) {
