@@ -31,6 +31,15 @@ public class Bot
         this.state = State.UNDISCOVERED;
     }
 
+    public Bot(string name, float cost, float amount, float discoverAmount, int count) {
+        this.name = name;
+        this.cost = cost;
+        this.amount = amount;
+        this.discoverAmount = discoverAmount;
+        this.count = count;
+        this.state = State.UNDISCOVERED;
+    }
+
     public string GetName() {
         return this.name;
     }

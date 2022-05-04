@@ -15,11 +15,11 @@ public class BotHandler : MonoBehaviour
 
     void Start() {
         InvokeRepeating("Add", time, time);
-        tupleList.Add((new Bot(name: "Bot01", cost: 10f, amount: 1.44f, discoverAmount: 0f), bots[0]));
-        tupleList.Add((new Bot(name: "Bot02", cost: 100f, amount: 15.43f, discoverAmount: 0f), bots[1]));
-        tupleList.Add((new Bot(name: "Bot03", cost: 1100f, amount: 134.67f, discoverAmount: 100f), bots[2]));
-        tupleList.Add((new Bot(name: "Bot04", cost: 12000f, amount: 456.87f, discoverAmount: 1100f), bots[3]));
-        tupleList.Add((new Bot(name: "Bot05", cost: 130000f, amount: 1234.56f, discoverAmount: 12000f), bots[4]));
+        tupleList.Add((new Bot(name: "Bot01", cost: 10f, amount: 0.014f, discoverAmount: 0f), bots[0]));
+        tupleList.Add((new Bot(name: "Bot02", cost: 100f, amount: 1.543f, discoverAmount: 0f), bots[1]));
+        tupleList.Add((new Bot(name: "Bot03", cost: 1100f, amount: 13.467f, discoverAmount: 100f), bots[2]));
+        tupleList.Add((new Bot(name: "Bot04", cost: 12000f, amount: 45.687f, discoverAmount: 1100f), bots[3]));
+        tupleList.Add((new Bot(name: "Bot05", cost: 130000f, amount: 123.456f, discoverAmount: 12000f), bots[4]));
         foreach ((Bot, GameObject) item in tupleList) {
             (Bot, GameObject) tuple = item;
             tuple.Item1.SetState(0);   
