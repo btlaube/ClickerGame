@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class BotHandler : MonoBehaviour
 {
-    private static float time = 1f;
+    private static float time = 0.1f;
     List<(Bot, GameObject)> tupleList = new List<(Bot, GameObject)>();
 
     public Player player;
@@ -39,7 +39,7 @@ public class BotHandler : MonoBehaviour
             }        
             if (player.GetMoney() < tuple.Item1.GetCost()) {
                 tuple.Item1.SetState(3);
-                tuple.Item2.GetComponent<Image>().sprite = shaded;
+                tuple.Item2.GetComponent<Button>().interactable = false;
             }
             else {
                 if(tuple.Item1.GetCount() > 0) {
@@ -48,7 +48,7 @@ public class BotHandler : MonoBehaviour
                 else {
                     tuple.Item1.SetState(1); 
                 }
-                tuple.Item2.GetComponent<Image>().sprite = lit;
+                tuple.Item2.GetComponent<Button>().interactable = true;
             }
         }
     }
