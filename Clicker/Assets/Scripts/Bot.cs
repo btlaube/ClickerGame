@@ -14,13 +14,6 @@ public class Bot
     public float discoverAmount;
     public int count;
     public State state;
-    /*
-    public Text costText;
-    public Text countText;
-    public CanvasGroup botCanvas;
-    public Sprite lit;
-    public Sprite shaded;
-    */
 
     public Bot(string name, float cost, float amount, float discoverAmount) {
         this.name = name;
