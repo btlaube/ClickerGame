@@ -24,9 +24,10 @@ public class DisplayBot : MonoBehaviour
 
     void Start() {
         InvokeRepeating("Add", time, time);
+        bot.RuntimeCount = 0;
         nameText.text = bot.name;
         countText.text = bot.RuntimeCount.ToString();
-        costText.text = "$" + bot.RuntimeCost.ToString();
+        costText.text = PrintMoney(bot.RuntimeCost);
     }
 
     void Update() {
@@ -44,7 +45,7 @@ public class DisplayBot : MonoBehaviour
                 button.interactable = false;
                 break;
         }
-        if(bot.RuntimeState != State.UNDISCOVERED) {
+        if(bot.RuntimeState != State.UNDISCOVERED) {            
             if(player.money < bot.RuntimeCost) {
                 bot.RuntimeState = State.UNAVAILABLE;
             }
@@ -64,11 +65,15 @@ public class DisplayBot : MonoBehaviour
         bot.RuntimeCount++;
         bot.RuntimeCost *= 1.2f;  
         countText.text = bot.RuntimeCount.ToString();
-        costText.text = "$" + bot.RuntimeCost.ToString();
+        costText.text = PrintMoney(bot.RuntimeCost);
     }
 
     void Add() {
         player.AddMoney(bot.RuntimeCount * bot.amount);
+    }
+
+    public string PrintMoney(float money) {
+        return "$" + (Mathf.Round(money * 100.0f) * 0.01f).ToString();
     }
 
 }

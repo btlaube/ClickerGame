@@ -18,11 +18,11 @@ public class Player : MonoBehaviour
             PlayerPrefs.SetFloat("money", 0f);
             PlayerPrefs.Save();
             money = 0;
-            moneyText.text = "$" + (Mathf.Round(money * 100.0f) * 0.01f).ToString();
+            moneyText.text = PrintMoney(money);
         }
         else {
             money = PlayerPrefs.GetFloat("money");
-            moneyText.text = "$" + (Mathf.Round(money * 100.0f) * 0.01f).ToString();
+            moneyText.text = PrintMoney(money);
         }
     }
 
@@ -32,12 +32,12 @@ public class Player : MonoBehaviour
 
     public void AddMoney(float amount) {
         money += amount;
-        moneyText.text = "$" + (Mathf.Round(money * 100.0f) * 0.01f).ToString();
+        moneyText.text = PrintMoney(money);
     }
 
     public void SpendMoney(float amount) {
         money -= amount;
-        moneyText.text = "$" + (Mathf.Round(money * 100.0f) * 0.01f).ToString();
+        moneyText.text = PrintMoney(money);
     }
 
     public void Save() {
@@ -48,7 +48,11 @@ public class Player : MonoBehaviour
     public void Reset() {
         PlayerPrefs.DeleteKey("money");
         money = 0;
-        moneyText.text = "$" + (Mathf.Round(money * 100.0f) * 0.01f).ToString();
+        moneyText.text = PrintMoney(money);
+    }
+
+    public string PrintMoney(float money) {
+        return "$" + (Mathf.Round(money * 100.0f) * 0.01f).ToString();
     }
 
 }
