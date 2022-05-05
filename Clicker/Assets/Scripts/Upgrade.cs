@@ -11,6 +11,7 @@ public abstract class Upgrade : ScriptableObject
     
     public new string name;
     public Bot bot;
+    public float cost;
     public State state;
 
     public abstract void OnActivated();
