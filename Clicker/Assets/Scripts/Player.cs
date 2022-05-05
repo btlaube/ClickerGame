@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    private float money = 0f;
+    public float money = 0f;
 
     public Text moneyText;
 

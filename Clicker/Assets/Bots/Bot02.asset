@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Bot 02
   cost: 100
+  count: 0
   amount: 1.543
   discoverAmount: 0
-  count: 0
-  state: 0
+  state: 2

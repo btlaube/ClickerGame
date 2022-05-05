@@ -409,6 +409,10 @@ PrefabInstance:
       propertyPath: bot
       value: 
       objectReference: {fileID: 11400000, guid: 497ca1c33d6ac9d41ba7bd99178821ce, type: 2}
+    - target: {fileID: 9052970200529284580, guid: 663f109ca42110c49818602eff5340c2, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1874493858}
     - target: {fileID: 9052970200529284581, guid: 663f109ca42110c49818602eff5340c2, type: 3}
       propertyPath: m_Name
       value: Bot 02
@@ -594,6 +598,10 @@ PrefabInstance:
       propertyPath: bot
       value: 
       objectReference: {fileID: 11400000, guid: 6f4931a530ad0154aa3833184992de1d, type: 2}
+    - target: {fileID: 9052970200529284580, guid: 663f109ca42110c49818602eff5340c2, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1874493858}
     - target: {fileID: 9052970200529284581, guid: 663f109ca42110c49818602eff5340c2, type: 3}
       propertyPath: m_Name
       value: Bot 03
@@ -774,6 +782,10 @@ PrefabInstance:
       propertyPath: bot
       value: 
       objectReference: {fileID: 11400000, guid: 97f7011c01ce5b4478d872b1240ddac5, type: 2}
+    - target: {fileID: 9052970200529284580, guid: 663f109ca42110c49818602eff5340c2, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1874493858}
     - target: {fileID: 9052970200529284581, guid: 663f109ca42110c49818602eff5340c2, type: 3}
       propertyPath: m_Name
       value: Bot 01
@@ -1220,6 +1232,10 @@ PrefabInstance:
       propertyPath: bot
       value: 
       objectReference: {fileID: 11400000, guid: 55dce0ccf40673d48b40ba2ad1132fae, type: 2}
+    - target: {fileID: 9052970200529284580, guid: 663f109ca42110c49818602eff5340c2, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1874493858}
     - target: {fileID: 9052970200529284581, guid: 663f109ca42110c49818602eff5340c2, type: 3}
       propertyPath: m_Name
       value: Bot 05
@@ -1321,6 +1337,10 @@ PrefabInstance:
       propertyPath: bot
       value: 
       objectReference: {fileID: 11400000, guid: 39b66297801fb1248a08936ffa33e336, type: 2}
+    - target: {fileID: 9052970200529284580, guid: 663f109ca42110c49818602eff5340c2, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1874493858}
     - target: {fileID: 9052970200529284581, guid: 663f109ca42110c49818602eff5340c2, type: 3}
       propertyPath: m_Name
       value: Bot 04

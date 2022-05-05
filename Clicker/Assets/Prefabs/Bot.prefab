@@ -361,7 +361,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3148532953265024170}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9052970200529284580}
+        m_TargetAssemblyTypeName: DisplayBot, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!225 &3413926560068600427
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -387,6 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bot: {fileID: 0}
+  player: {fileID: 0}
   nameText: {fileID: 5721076960014672049}
   costText: {fileID: 4739245782604339330}
   countText: {fileID: 248230640159618368}

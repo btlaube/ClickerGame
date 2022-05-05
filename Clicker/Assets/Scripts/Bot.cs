@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum State {UNDISCOVERED, AVAILABLE, PURCHASED, UNAFFORDABLE};
+//public enum State {UNDISCOVERED, AVAILABLE, PURCHASED, UNAFFORDABLE};
 
 [System.Serializable]
 public class Bot
