@@ -1,79 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using System.Runtime.Serialization.Formatters.Binary;
 
-//public enum State {UNDISCOVERED, AVAILABLE, PURCHASED, UNAFFORDABLE};
 
-[System.Serializable]
-public class Bot
+public enum State {UNDISCOVERED, AVAILABLE, UNAVAILABLE};
+
+[CreateAssetMenu(fileName = "New Bot", menuName = "Bot")]
+public class Bot : ScriptableObject, ISerializationCallbackReceiver
 {
-    public string name;
-    public float cost;
+    public new string name;    
     public float amount;
     public float discoverAmount;
-    public int count;
-    public State state;
-    /*
-    public Text costText;
-    public Text countText;
-    public CanvasGroup botCanvas;
-    public Sprite lit;
-    public Sprite shaded;
-    */
 
-    public Bot(string name, float cost, float amount, float discoverAmount) {
-        this.name = name;
-        this.cost = cost;
-        this.amount = amount;
-        this.discoverAmount = discoverAmount;
-        this.count = 0;
-        this.state = State.UNDISCOVERED;
+    public float initialCost;
+    public State initialState = State.UNDISCOVERED;
+    public int initialCount = 0;
+
+    //[System.NonSerialized]
+    public float RuntimeCost;
+    //[System.NonSerialized]
+    public State RuntimeState;
+    //[System.NonSerialized]
+    public int RuntimeCount;
+
+    public void TestSetState(State state) {
+        this.RuntimeState = state;
     }
 
-    public Bot(string name, float cost, float amount, float discoverAmount, int count) {
-        this.name = name;
-        this.cost = cost;
-        this.amount = amount;
-        this.discoverAmount = discoverAmount;
-        this.count = count;
-        this.state = State.UNDISCOVERED;
+    public void OnAfterDeserialize() {
+        RuntimeCost = initialCost;
+        RuntimeCount = initialCount;
+        RuntimeState = initialState;
     }
 
-    public string GetName() {
-        return this.name;
-    }
+    public void OnBeforeSerialize() { }
 
-    public float GetCost() {
-        return this.cost;
-    }
-
-    public float GetAmount() {
-        return this.amount;
-    }
-
-    public float GetDiscoverAmount() {
-        return this.discoverAmount;
-    }
-
-    public int GetCount() {
-        return this.count;
-    }
-
-    public int GetState() {
-        return (int)this.state;
-    }
-
-    public void SetCost(float cost) {
-        this.cost = cost;
-    }
-
-    public void SetCount(int count) {
-        this.count = count;
-    }
-
-    public void SetState(int state) {
-        this.state = (State)state;
-    }
 
 }

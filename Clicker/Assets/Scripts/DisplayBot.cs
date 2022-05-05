@@ -10,7 +10,7 @@ public class DisplayBot : MonoBehaviour
     private CanvasGroup canvas;
     private Button button;
     
-    public NewBot bot;
+    public Bot bot;
     public Player player;
 
     public Text nameText;    

@@ -9,12 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab67cdfa50b2cbc4d928117d846a0e38, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a49515df3232614d94c3fb1d25e90a8, type: 3}
   m_Name: Bot04
   m_EditorClassIdentifier: 
   name: Bot 04
-  cost: 12000
-  count: 0
   amount: 45.687
   discoverAmount: 1100
-  state: 0
+  initialCost: 12000
+  initialState: 0
+  initialCount: 0
+  RuntimeCost: 12000
+  RuntimeState: 0
+  RuntimeCount: 0
