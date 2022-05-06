@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Bot 01 Upgrade #01
   description: Bot 01 will be twice as efficient
   discoverCount: 1
-  initialCost: 100
+  initialCost: 20
   initialState: 0
-  runtimeCost: 100
+  runtimeCost: 20
   runtimeState: 0

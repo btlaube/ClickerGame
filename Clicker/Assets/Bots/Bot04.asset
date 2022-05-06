@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: Bot04
   m_EditorClassIdentifier: 
   name: Bot 04
-  amount: 45.687
   discoverAmount: 1100
+  initialAmount: 23.453
   initialCost: 12000
   initialState: 0
   initialCount: 0
-  RuntimeCost: 12000
-  RuntimeState: 0
-  RuntimeCount: 0
+  runtimeAmount: 23.453
+  runtimeCost: 12000
+  runtimeState: 0
+  runtimeCount: 0
