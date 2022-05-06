@@ -18,20 +18,20 @@ public class Bot : ScriptableObject, ISerializationCallbackReceiver
     public int initialCount = 0;
 
     //[System.NonSerialized]
-    public float RuntimeCost;
+    public float runtimeCost;
     //[System.NonSerialized]
-    public State RuntimeState;
+    public State runtimeState;
     //[System.NonSerialized]
-    public int RuntimeCount;
+    public int runtimeCount;
 
     public void TestSetState(State state) {
-        this.RuntimeState = state;
+        this.runtimeState = state;
     }
 
     public void OnAfterDeserialize() {
-        RuntimeCost = initialCost;
-        RuntimeCount = initialCount;
-        RuntimeState = initialState;
+        runtimeCost = initialCost;
+        runtimeCount = initialCount;
+        runtimeState = initialState;
     }
 
     public void OnBeforeSerialize() { }

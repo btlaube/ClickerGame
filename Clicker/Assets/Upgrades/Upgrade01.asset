@@ -12,5 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c84eb32dbf79044a9cc60f2817a29a2, type: 3}
   m_Name: Upgrade01
   m_EditorClassIdentifier: 
+  name: Bot 01 Upgrade #01
+  description: Bot 01 is twice as efficient
   bot: {fileID: 11400000, guid: 97f7011c01ce5b4478d872b1240ddac5, type: 2}
-  state: 0
+  initialCost: 1000
+  initialState: 0
+  runtimeCost: 1000
+  runtimeState: 0

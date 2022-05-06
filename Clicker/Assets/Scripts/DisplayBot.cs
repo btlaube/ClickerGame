@@ -24,14 +24,14 @@ public class DisplayBot : MonoBehaviour
 
     void Start() {
         InvokeRepeating("Add", time, time);
-        bot.RuntimeCount = 0;
+        bot.runtimeCount = 0;
         nameText.text = bot.name;
-        countText.text = bot.RuntimeCount.ToString();
-        costText.text = PrintMoney(bot.RuntimeCost);
+        countText.text = bot.runtimeCount.ToString();
+        costText.text = PrintMoney(bot.runtimeCost);
     }
 
     void Update() {
-        switch(bot.RuntimeState) {
+        switch(bot.runtimeState) {
             case State.UNDISCOVERED:
                 canvas.alpha = 0;
                 button.interactable = false;
@@ -45,31 +45,31 @@ public class DisplayBot : MonoBehaviour
                 button.interactable = false;
                 break;
         }
-        if(bot.RuntimeState != State.UNDISCOVERED) {            
-            if(player.money < bot.RuntimeCost) {
-                bot.RuntimeState = State.UNAVAILABLE;
+        if(bot.runtimeState != State.UNDISCOVERED) {            
+            if(player.money < bot.runtimeCost) {
+                bot.runtimeState = State.UNAVAILABLE;
             }
             else {
-                bot.RuntimeState = State.AVAILABLE;
+                bot.runtimeState = State.AVAILABLE;
             }
         }
         else {
             if(player.money >= bot.discoverAmount) {
-                bot.RuntimeState = State.AVAILABLE;
+                bot.runtimeState = State.AVAILABLE;
             }
         }
     }
 
     public void Buy() {
-        player.SpendMoney(bot.RuntimeCost);
-        bot.RuntimeCount++;
-        bot.RuntimeCost *= 1.2f;  
-        countText.text = bot.RuntimeCount.ToString();
-        costText.text = PrintMoney(bot.RuntimeCost);
+        player.SpendMoney(bot.runtimeCost);
+        bot.runtimeCount++;
+        bot.runtimeCost *= 1.2f;  
+        countText.text = bot.runtimeCount.ToString();
+        costText.text = PrintMoney(bot.runtimeCost);
     }
 
     void Add() {
-        player.AddMoney(bot.RuntimeCount * bot.amount);
+        player.AddMoney(bot.runtimeCount * bot.amount);
     }
 
     public string PrintMoney(float money) {

@@ -18,6 +18,6 @@ MonoBehaviour:
   initialCost: 10
   initialState: 0
   initialCount: 0
-  RuntimeCost: 20.736002
-  RuntimeState: 2
-  RuntimeCount: 4
+  RuntimeCost: 12
+  RuntimeState: 1
+  RuntimeCount: 1
