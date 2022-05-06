@@ -5,8 +5,8 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 enum UpgradeState {UNDISCOVERED, AVAILABLE, PURCHASED}
 
-[CreateAssetMenu(fileName = "New Upgrade", menuName = "Upgrade")]
-public class Upgrade : ScriptableObject, ISerializationCallbackReceiver
+
+public abstract class Upgrade : ScriptableObject, ISerializationCallbackReceiver
 {
     
     public new string name;
@@ -26,12 +26,8 @@ public class Upgrade : ScriptableObject, ISerializationCallbackReceiver
 
     public void OnBeforeSerialize() { }
 
-    //public abstract void OnActivated();
+    public abstract void OnActivated();
 
 }
 
-//public class Bot01_Amount_Upgrade_1 : Upgrade  {
-//    public override void OnActivated() {
-//
-//    }
-//}
+
