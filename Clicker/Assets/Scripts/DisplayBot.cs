@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class DisplayBot : MonoBehaviour
 {
 
-    private static float time = 0.1f;
+    //private static float time = 0.1f;
     private CanvasGroup canvas;
     private Button button;
     
@@ -23,8 +23,8 @@ public class DisplayBot : MonoBehaviour
     }
 
     void Start() {
-        InvokeRepeating("Add", time, time);
-        player.moneyRate += bot.runtimeAmount * bot.runtimeCount;
+        //InvokeRepeating("Add", time, time);
+        player.runtimeRate += bot.runtimeAmount * bot.runtimeCount;
         nameText.text = bot.name;
         countText.text = bot.runtimeCount.ToString();
         costText.text = PrintMoney(bot.runtimeCost);
@@ -46,7 +46,7 @@ public class DisplayBot : MonoBehaviour
                 break;
         }
         if(bot.runtimeState != State.UNDISCOVERED) {            
-            if(player.money < bot.runtimeCost) {
+            if(player.runtimeMoney < bot.runtimeCost) {
                 bot.runtimeState = State.UNAVAILABLE;
             }
             else {
@@ -54,23 +54,18 @@ public class DisplayBot : MonoBehaviour
             }
         }
         else {
-            if(player.money >= bot.discoverAmount) {
+            if(player.runtimeMoney >= bot.discoverAmount) {
                 bot.runtimeState = State.AVAILABLE;
             }
         }
     }
 
     public void Buy() {
-        player.SpendMoney(bot.runtimeCost);
+        player.runtimeMoney -= bot.runtimeCost;
         bot.runtimeCount++;
         bot.runtimeCost *= 1.2f;
-        player.moneyRate += bot.runtimeAmount;
         countText.text = bot.runtimeCount.ToString();
         costText.text = PrintMoney(bot.runtimeCost);
-    }
-
-    void Add() {
-        player.AddMoney(bot.runtimeCount * bot.runtimeAmount);
     }
 
     public string PrintMoney(float money) {

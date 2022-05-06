@@ -52,7 +52,7 @@ public class DisplayUpgrade : MonoBehaviour
                 break;
         }
         if(upgrade.runtimeState != UpgradeState.UNDISCOVERED && upgrade.runtimeState != UpgradeState.PURCHASED) {
-            if(player.money < upgrade.runtimeCost) {
+            if(player.runtimeMoney < upgrade.runtimeCost) {
                 upgrade.runtimeState = UpgradeState.UNAVAILABLE;
             }
             else {
