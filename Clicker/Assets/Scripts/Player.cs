@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public float money = 0f;
+    public float moneyRate;
 
     public Text moneyText;
+    public Text rateText;
 
     void Start() {
         initializePlayer();
@@ -53,6 +55,10 @@ public class Player : MonoBehaviour
 
     public string PrintMoney(float money) {
         return "$" + (Mathf.Round(money * 100.0f) * 0.01f).ToString();
+    }
+
+    void Update() {
+        this.rateText.text = PrintMoney(this.moneyRate) + " per second";
     }
 
 }
