@@ -10,6 +10,7 @@ public abstract class Upgrade : ScriptableObject, ISerializationCallbackReceiver
 {
     
     public Bot bot;
+    public Player player;
     public new string name;
     public string description;
     public float discoverCount;
@@ -29,6 +30,21 @@ public abstract class Upgrade : ScriptableObject, ISerializationCallbackReceiver
 
     public abstract void Buy();
 
+    public void UpdateState() {
+        if(this.runtimeState != UpgradeState.UNDISCOVERED && this.runtimeState != UpgradeState.PURCHASED) {
+            if(player.money < this.runtimeCost) {
+                this.runtimeState = UpgradeState.UNAVAILABLE;
+            }
+            else {
+                this.runtimeState = UpgradeState.AVAILABLE;
+            }
+        }
+        else if (this.runtimeState != UpgradeState.PURCHASED) {
+            if(this.bot.runtimeCount >= this.discoverCount) {
+                this.runtimeState = UpgradeState.AVAILABLE;
+            }
+        }
+    }
 
 }
 

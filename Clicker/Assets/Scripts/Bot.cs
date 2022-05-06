@@ -38,5 +38,4 @@ public class Bot : ScriptableObject, ISerializationCallbackReceiver
 
     public void OnBeforeSerialize() { }
 
-
 }

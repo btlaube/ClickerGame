@@ -51,19 +51,7 @@ public class DisplayUpgrade : MonoBehaviour
                 button.interactable = false;
                 break;
         }
-        if(upgrade.runtimeState != UpgradeState.UNDISCOVERED && upgrade.runtimeState != UpgradeState.PURCHASED) {
-            if(player.money < upgrade.runtimeCost) {
-                upgrade.runtimeState = UpgradeState.UNAVAILABLE;
-            }
-            else {
-                upgrade.runtimeState = UpgradeState.AVAILABLE;
-            }
-        }
-        else if (upgrade.runtimeState != UpgradeState.PURCHASED) {
-            if(upgrade.bot.runtimeCount >= upgrade.discoverCount) {
-                upgrade.runtimeState = UpgradeState.AVAILABLE;
-            }
-        }
+        upgrade.UpdateState();
     }
 
     public void Buy() {
