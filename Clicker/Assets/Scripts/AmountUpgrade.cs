@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Upgrade", menuName = "Upgrade")]
+[CreateAssetMenu(fileName = "New Upgrade", menuName = "Upgrade/AmountUpgrade")]
 public class AmountUpgrade : Upgrade  {
     public override void Buy() {
         this.bot.runtimeAmount *= 2f;
