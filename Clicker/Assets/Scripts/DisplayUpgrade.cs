@@ -47,7 +47,6 @@ public class DisplayUpgrade : MonoBehaviour
                 break;
             case UpgradeState.PURCHASED:
                 //delete game object
-                Debug.Log("Delete");
                 canvas.alpha = 0;
                 button.interactable = false;
                 break;
@@ -68,8 +67,7 @@ public class DisplayUpgrade : MonoBehaviour
     }
 
     public void Buy() {
-        //upgrade.runtimeState = UpgradeState.PURCHASED;
-        upgrade.Buy();        
+        upgrade.Buy();
     }
 
     public string PrintMoney(float money) {

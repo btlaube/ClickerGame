@@ -24,7 +24,7 @@ public class DisplayBot : MonoBehaviour
 
     void Start() {
         InvokeRepeating("Add", time, time);
-        player.moneyRate += bot.amount * bot.runtimeCount;
+        player.moneyRate += bot.runtimeAmount * bot.runtimeCount;
         nameText.text = bot.name;
         countText.text = bot.runtimeCount.ToString();
         costText.text = PrintMoney(bot.runtimeCost);
@@ -64,13 +64,13 @@ public class DisplayBot : MonoBehaviour
         player.SpendMoney(bot.runtimeCost);
         bot.runtimeCount++;
         bot.runtimeCost *= 1.2f;
-        player.moneyRate += bot.amount;
+        player.moneyRate += bot.runtimeAmount;
         countText.text = bot.runtimeCount.ToString();
         costText.text = PrintMoney(bot.runtimeCost);
     }
 
     void Add() {
-        player.AddMoney(bot.runtimeCount * bot.amount);
+        player.AddMoney(bot.runtimeCount * bot.runtimeAmount);
     }
 
     public string PrintMoney(float money) {

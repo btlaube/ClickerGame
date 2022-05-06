@@ -29,6 +29,7 @@ public abstract class Upgrade : ScriptableObject, ISerializationCallbackReceiver
 
     public abstract void Buy();
 
+
 }
 
 
