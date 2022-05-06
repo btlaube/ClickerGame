@@ -3,21 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 
-enum UpgradeState {UNDISCOVERED, AVAILABLE, PURCHASED}
+public enum UpgradeState {UNDISCOVERED, AVAILABLE, UNAVAILABLE, PURCHASED}
 
 
 public abstract class Upgrade : ScriptableObject, ISerializationCallbackReceiver
 {
     
+    public Bot bot;
     public new string name;
     public string description;
-    public Bot bot;
+    public float discoverCount;
 
     public float initialCost;
-    public State initialState;
+    public UpgradeState initialState;
 
     public float runtimeCost;
-    public State runtimeState;
+    public UpgradeState runtimeState;
 
     public void OnAfterDeserialize() {
         runtimeCost = initialCost;
@@ -26,7 +27,7 @@ public abstract class Upgrade : ScriptableObject, ISerializationCallbackReceiver
 
     public void OnBeforeSerialize() { }
 
-    public abstract void OnActivated();
+    public abstract void Buy();
 
 }
 

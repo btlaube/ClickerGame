@@ -25,7 +25,6 @@ public class DisplayBot : MonoBehaviour
     void Start() {
         InvokeRepeating("Add", time, time);
         player.moneyRate += bot.amount * bot.runtimeCount;
-        bot.runtimeCount = 0;
         nameText.text = bot.name;
         countText.text = bot.runtimeCount.ToString();
         costText.text = PrintMoney(bot.runtimeCost);

@@ -362,8 +362,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DisplayBot, Assembly-CSharp
+      - m_Target: {fileID: 332460699786336464}
+        m_TargetAssemblyTypeName: DisplayUpgrade, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
         m_Arguments:
@@ -398,7 +398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d0d4e5a8517db48b879b4b95389561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bot: {fileID: 0}
+  upgrade: {fileID: 0}
   player: {fileID: 0}
   nameText: {fileID: 6956360894291852172}
   costText: {fileID: 7938019456965526463}

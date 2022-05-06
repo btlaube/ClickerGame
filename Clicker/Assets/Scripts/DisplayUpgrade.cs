@@ -32,7 +32,44 @@ public class DisplayUpgrade : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        switch(upgrade.runtimeState) {
+            case UpgradeState.UNDISCOVERED:
+                canvas.alpha = 0;
+                button.interactable = false;
+                break;
+            case UpgradeState.AVAILABLE:
+                canvas.alpha = 1;
+                button.interactable = true;
+                break;
+            case UpgradeState.UNAVAILABLE:
+                canvas.alpha = 1;
+                button.interactable = false;
+                break;
+            case UpgradeState.PURCHASED:
+                //delete game object
+                Debug.Log("Delete");
+                canvas.alpha = 0;
+                button.interactable = false;
+                break;
+        }
+        if(upgrade.runtimeState != UpgradeState.UNDISCOVERED && upgrade.runtimeState != UpgradeState.PURCHASED) {
+            if(player.money < upgrade.runtimeCost) {
+                upgrade.runtimeState = UpgradeState.UNAVAILABLE;
+            }
+            else {
+                upgrade.runtimeState = UpgradeState.AVAILABLE;
+            }
+        }
+        else if (upgrade.runtimeState != UpgradeState.PURCHASED) {
+            if(upgrade.bot.runtimeCount >= upgrade.discoverCount) {
+                upgrade.runtimeState = UpgradeState.AVAILABLE;
+            }
+        }
+    }
+
+    public void Buy() {
+        //upgrade.runtimeState = UpgradeState.PURCHASED;
+        upgrade.Buy();        
     }
 
     public string PrintMoney(float money) {
