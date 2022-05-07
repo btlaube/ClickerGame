@@ -19,4 +19,4 @@ MonoBehaviour:
   initialCost: 20
   initialState: 0
   runtimeCost: 20
-  runtimeState: 0
+  runtimeState: 3

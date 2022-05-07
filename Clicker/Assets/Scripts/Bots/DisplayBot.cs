@@ -23,7 +23,6 @@ public class DisplayBot : MonoBehaviour
     }
 
     void Start() {
-        //InvokeRepeating("Add", time, time);
         player.runtimeRate += bot.runtimeAmount * bot.runtimeCount;
         nameText.text = bot.name;
         countText.text = bot.runtimeCount.ToString();

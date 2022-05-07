@@ -9,14 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebbe7495ecfbdde4a8d02349d3414fb1, type: 3}
-  m_Name: Bot02_Amount_01
+  m_Script: {fileID: 11500000, guid: 6b7854a755870b34091131f9fc01b38c, type: 3}
+  m_Name: Bot01_Cost_01
   m_EditorClassIdentifier: 
-  bot: {fileID: 11400000, guid: 497ca1c33d6ac9d41ba7bd99178821ce, type: 2}
-  name: Bot 02 Upgrade #01
-  description: Bot 02 will be twice as efficient
-  discoverCount: 1
-  initialCost: 150
+  bot: {fileID: 11400000, guid: 97f7011c01ce5b4478d872b1240ddac5, type: 2}
+  name: Bot 01 Cost Upgrade #01
+  description: Bot 01 will be 50% cheaper
+  discoverCount: 2
+  initialCost: 200
   initialState: 0
-  runtimeCost: 150
+  runtimeCost: 200
   runtimeState: 2

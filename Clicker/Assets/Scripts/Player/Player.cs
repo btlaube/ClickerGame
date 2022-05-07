@@ -9,13 +9,16 @@ public class Player : ScriptableObject, ISerializationCallbackReceiver
 
     public float initialMoney = 0f;
     public float initialRate = 0f;
+    public float initialClickValue = 1f;
 
     public float runtimeMoney;
     public float runtimeRate;
+    public float runtimeClickValue;
 
     public void OnAfterDeserialize() {
         runtimeMoney = initialMoney;
         runtimeRate = initialRate;
+        runtimeClickValue = initialClickValue;
     }
 
     public void OnBeforeSerialize() { }

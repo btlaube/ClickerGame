@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DisplayPlayer : MonoBehaviour
 {
-    private static float time = 0.1f;
+    private static float time = 0.01f;
     public Player player;
     public List<Bot> bots;
 
@@ -33,7 +33,7 @@ public class DisplayPlayer : MonoBehaviour
     }
 
     public void OnClick() {
-        player.runtimeMoney += 1f;
+        player.runtimeMoney += player.runtimeClickValue;
     }
 
     public string PrintMoney(float money) {
