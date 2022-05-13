@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebbe7495ecfbdde4a8d02349d3414fb1, type: 3}
+  m_Name: Bot01_Amount_02
+  m_EditorClassIdentifier: 
+  bot: {fileID: 11400000, guid: 97f7011c01ce5b4478d872b1240ddac5, type: 2}
+  name: Bot 01 Upgrade #02
+  description: Bot 01 will be twice as efficient
+  discoverCount: 30
+  initialCost: 50
+  initialState: 0
+  runtimeCost: 50
+  runtimeState: 0

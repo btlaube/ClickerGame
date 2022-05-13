@@ -47,8 +47,9 @@ public class DisplayUpgrade : MonoBehaviour
                 break;
             case UpgradeState.PURCHASED:
                 //delete game object
-                canvas.alpha = 0;
-                button.interactable = false;
+                Destroy(gameObject);
+                //canvas.alpha = 0;
+                //button.interactable = false;
                 break;
         }
         if(upgrade.runtimeState != UpgradeState.UNDISCOVERED && upgrade.runtimeState != UpgradeState.PURCHASED) {

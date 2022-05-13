@@ -20,5 +20,5 @@ MonoBehaviour:
   initialCount: 0
   runtimeAmount: 0.014
   runtimeCost: 10
-  runtimeState: 2
+  runtimeState: 1
   runtimeCount: 0

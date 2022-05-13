@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DisplayPlayer : MonoBehaviour
 {
-    private static float time = 0.01f;
+    private static float time = 0.1f;
     public Player player;
     public List<Bot> bots;
 
