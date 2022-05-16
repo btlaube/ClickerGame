@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5ae2ce3b9f169447a19d2ce0be59fd0, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  initialMoney: 9999
+  initialMoney: 0
   initialRate: 0
   initialClickValue: 1
-  runtimeMoney: 581.06384
-  runtimeRate: 12.079
+  runtimeMoney: 5.975992
+  runtimeRate: 0.13700001
   runtimeClickValue: 1
