@@ -639,6 +639,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8748084083907101153, guid: 663f109ca42110c49818602eff5340c2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 053cd625d78a0fa4389c444797a8f69e, type: 3}
     - target: {fileID: 9052970200529284580, guid: 663f109ca42110c49818602eff5340c2, type: 3}
       propertyPath: bot
       value: 
@@ -890,6 +894,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8748084083907101153, guid: 663f109ca42110c49818602eff5340c2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0be1cf9d05239b749910d0434d6b5dfe, type: 3}
     - target: {fileID: 9052970200529284580, guid: 663f109ca42110c49818602eff5340c2, type: 3}
       propertyPath: bot
       value: 
@@ -1228,6 +1236,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8748084083907101153, guid: 663f109ca42110c49818602eff5340c2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 50de433cd43c0c3469019f27e01921a2, type: 3}
     - target: {fileID: 9052970200529284580, guid: 663f109ca42110c49818602eff5340c2, type: 3}
       propertyPath: bot
       value: 
@@ -1769,6 +1781,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8748084083907101153, guid: 663f109ca42110c49818602eff5340c2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f23bf795119eb36409bea9845a1508c6, type: 3}
     - target: {fileID: 9052970200529284580, guid: 663f109ca42110c49818602eff5340c2, type: 3}
       propertyPath: bot
       value: 
@@ -1886,6 +1902,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8748084083907101153, guid: 663f109ca42110c49818602eff5340c2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ae37c58d201eaa649b21704e2b5cea63, type: 3}
     - target: {fileID: 9052970200529284580, guid: 663f109ca42110c49818602eff5340c2, type: 3}
       propertyPath: bot
       value: 
