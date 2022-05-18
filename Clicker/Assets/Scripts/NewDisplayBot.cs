@@ -3,26 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DisplayBot : MonoBehaviour
+public class NewDisplayBot : MonoBehaviour
 {
 
-    //private static float time = 0.1f;
-    private CanvasGroup canvas;
-    private Button button;
-    public Button upgradeCost;
-    public Button upgradeAmount;
+    public CanvasGroup canvas;
+    public Button button;
     
-    public Bot bot;
+    public NewBot bot;
     public Player player;
 
     public Text nameText;    
     public Text costText;
     public Text countText;
-
-    void Awake() {
-        canvas = this.GetComponent<CanvasGroup>();
-        button = this.GetComponent<Button>();
-    }
 
     void Start() {
         player.runtimeRate += bot.runtimeAmount * bot.runtimeCount;
@@ -72,16 +64,4 @@ public class DisplayBot : MonoBehaviour
     public string PrintMoney(float money) {
         return "$" + (Mathf.Round(money * 100.0f) * 0.01f).ToString();
     }
-/*
-    public void UpgradeCost() {
-        bot.runtimeCost *= 0.5f;
-        costText.text = PrintMoney(bot.runtimeCost);
-        bot.runtimeCostUpgradePrice *= 100f;
-    }
-
-    public void UpgradeAmount() {
-        bot.runtimeAmount *= 2.0f;
-        bot.runtimeAmountUpgradePrice *= 100f;
-    }
-*/
 }
