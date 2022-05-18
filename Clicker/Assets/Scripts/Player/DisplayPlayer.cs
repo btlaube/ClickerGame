@@ -7,7 +7,7 @@ public class DisplayPlayer : MonoBehaviour
 {
     private static float time = 0.1f;
     public Player player;
-    public List<NewBot> bots;
+    public List<Bot> bots;
 
     public Text moneyText;
     public Text rateText;
@@ -26,7 +26,7 @@ public class DisplayPlayer : MonoBehaviour
 
     public void LoadBots() {
         player.runtimeRate = 0f;
-        foreach(NewBot bot in bots) {
+        foreach(Bot bot in bots) {
             player.runtimeRate += (bot.runtimeAmount * bot.runtimeCount);
         }
         this.rateText.text = PrintMoney(player.runtimeRate);
