@@ -64,4 +64,10 @@ public class NewDisplayBot : MonoBehaviour
     public string PrintMoney(float money) {
         return "$" + (Mathf.Round(money * 100.0f) * 0.01f).ToString();
     }
+
+    public void UpdateDisplay() {
+        countText.text = bot.runtimeCount.ToString();
+        costText.text = PrintMoney(bot.runtimeCost);
+    }
+
 }

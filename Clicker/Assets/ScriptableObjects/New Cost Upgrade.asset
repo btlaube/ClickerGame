@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b22cdc2825cc1d42b5bc87320a38ff8, type: 3}
   m_Name: New Cost Upgrade
   m_EditorClassIdentifier: 
-  bot: {fileID: 0}
-  discoverCount: 0
-  initialCost: 0
+  bot: {fileID: 11400000, guid: 20586c7abebee4240b48ff8373c9b251, type: 2}
+  discoverCount: 2
+  initialCost: 12
   initialState: 0
-  runtimeCost: 0
-  runtimeState: 0
+  runtimeCost: 12
+  runtimeState: 1

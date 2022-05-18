@@ -13,14 +13,11 @@ MonoBehaviour:
   m_Name: New Bot
   m_EditorClassIdentifier: 
   discoverAmount: 0
-  upgrades:
-  - {fileID: 0}
-  - {fileID: 0}
-  initialAmount: 0
-  initialCost: 0
+  initialAmount: 0.014
+  initialCost: 10
   initialState: 0
   initialCount: 0
-  runtimeAmount: 0
-  runtimeCost: 0
-  runtimeState: 0
-  runtimeCount: 0
+  runtimeAmount: 1835.008
+  runtimeCost: 171.43445
+  runtimeState: 1
+  runtimeCount: 46
