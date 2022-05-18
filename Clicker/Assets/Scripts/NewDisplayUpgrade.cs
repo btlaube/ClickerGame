@@ -41,6 +41,11 @@ public class NewDisplayUpgrade : MonoBehaviour
         }
     }
 
+    public void Buy() {
+        player.runtimeMoney -= upgrade.runtimeCost;
+        this.upgrade.Buy();
+    }
+
     public string PrintMoney(float money) {
         return "$" + (Mathf.Round(money * 100.0f) * 0.01f).ToString();
     }
