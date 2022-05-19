@@ -9,7 +9,7 @@ public enum State {UNDISCOVERED, AVAILABLE, UNAVAILABLE};
 public class Bot : ScriptableObject, ISerializationCallbackReceiver
 {
 
-    public List<Upgrade> upgrades = new List<Upgrade>();
+    //public List<Upgrade> upgrades = new List<Upgrade>();
 
     public new string name;
     public float discoverAmount;
