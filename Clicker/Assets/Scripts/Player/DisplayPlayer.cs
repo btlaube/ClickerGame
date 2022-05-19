@@ -20,20 +20,20 @@ public class DisplayPlayer : MonoBehaviour
     }
 
     void Add() {
-        Player.runtimeMoney += Player.runtimeRate;
-        this.moneyText.text = PrintMoney(Player.runtimeMoney);
+        player.runtimeMoney += player.runtimeRate;
+        this.moneyText.text = PrintMoney(player.runtimeMoney);
     }
 
     public void LoadBots() {
-        Player.runtimeRate = 0f;
+        player.runtimeRate = 0f;
         foreach(Bot bot in bots) {
-            Player.runtimeRate += (bot.runtimeAmount * bot.runtimeCount);
+            player.runtimeRate += (bot.runtimeAmount * bot.runtimeCount);
         }
-        this.rateText.text = PrintMoney(Player.runtimeRate);
+        this.rateText.text = PrintMoney(player.runtimeRate) + " per second";
     }
 
     public void OnClick() {
-        Player.runtimeMoney += player.runtimeClickValue;
+        player.runtimeMoney += player.runtimeClickValue;
     }
 
     public string PrintMoney(float money) {

@@ -8,42 +8,55 @@ public class DisplayUpgrade : MonoBehaviour
     public CanvasGroup canvas;
     public Button button;
 
+    public Player player;
+
     public Upgrade upgrade;
-    //public Player player;
+    public GameObject playerDisplay;
+    public Bot bot;
     
+    void Awake() {
+        playerDisplay = GameObject.Find("Player");
+    }
+
+
     void Update() {
         switch(upgrade.runtimeState) {
-            case State.UNDISCOVERED:
+            case UpgradeState.UNDISCOVERED:
                 canvas.alpha = 0;
                 button.interactable = false;
                 break;
-            case State.AVAILABLE:
+            case UpgradeState.AVAILABLE:
                 canvas.alpha = 1;
                 button.interactable = true;
                 break;
-            case State.UNAVAILABLE:
+            case UpgradeState.UNAVAILABLE:
                 canvas.alpha = 1;
                 button.interactable = false;
                 break;
+            case UpgradeState.PURCHASED:
+                Destroy(gameObject);
+                break;
         }
-        if(upgrade.runtimeState != State.UNDISCOVERED) {            
-            if(Player.runtimeMoney < upgrade.runtimeCost) {
-                upgrade.runtimeState = State.UNAVAILABLE;
+        if(upgrade.runtimeState != UpgradeState.UNDISCOVERED && upgrade.runtimeState != UpgradeState.PURCHASED) {
+            if(player.runtimeMoney < upgrade.runtimeCost) {
+                upgrade.runtimeState = UpgradeState.UNAVAILABLE;
             }
             else {
-                upgrade.runtimeState = State.AVAILABLE;
+                upgrade.runtimeState = UpgradeState.AVAILABLE;
             }
         }
-        else {
+        else if (upgrade.runtimeState != UpgradeState.PURCHASED) {
             if(upgrade.bot.runtimeCount >= upgrade.discoverCount) {
-                upgrade.runtimeState = State.AVAILABLE;
+                upgrade.runtimeState = UpgradeState.AVAILABLE;
             }
         }
     }
 
     public void Buy() {
-        Player.runtimeMoney -= upgrade.runtimeCost;
+        player.runtimeMoney -= upgrade.runtimeCost;        
+        //bot.UpdateDisplay();
         this.upgrade.Buy();
+        playerDisplay.GetComponent<DisplayPlayer>().LoadBots();
     }
 
     public string PrintMoney(float money) {

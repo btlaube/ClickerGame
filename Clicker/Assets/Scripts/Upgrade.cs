@@ -9,14 +9,17 @@ public enum UpgradeState {UNDISCOVERED, AVAILABLE, UNAVAILABLE, PURCHASED};
 public abstract class Upgrade : ScriptableObject, ISerializationCallbackReceiver
 {
 
+    public GameObject playerDisplay;
+    public GameObject botDisplay;
+
     public Bot bot;
     public float discoverCount;
 
     public float initialCost;
-    public State initialState;
+    public UpgradeState initialState;
 
     public float runtimeCost;
-    public State runtimeState;
+    public UpgradeState runtimeState;
 
     public void OnAfterDeserialize() {
         runtimeCost = initialCost;

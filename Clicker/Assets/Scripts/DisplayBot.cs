@@ -13,19 +13,21 @@ public class DisplayBot : MonoBehaviour
     public Button button;
     
     public Bot bot;
+    public Player player;
 
     public Text nameText;    
     public Text costText;
     public Text countText;
 
     void Start() {
-        Player.runtimeRate += bot.runtimeAmount * bot.runtimeCount;
+        player.runtimeRate += bot.runtimeAmount * bot.runtimeCount;
         nameText.text = bot.name;
         countText.text = bot.runtimeCount.ToString();
         costText.text = PrintMoney(bot.runtimeCost);
     }
 
     void Update() {
+        costText.text = PrintMoney(bot.runtimeCost);
         switch(bot.runtimeState) {
             case State.UNDISCOVERED:
                 canvas.alpha = 0;
@@ -41,7 +43,7 @@ public class DisplayBot : MonoBehaviour
                 break;
         }
         if(bot.runtimeState != State.UNDISCOVERED) {            
-            if(Player.runtimeMoney < bot.runtimeCost) {
+            if(player.runtimeMoney < bot.runtimeCost) {
                 bot.runtimeState = State.UNAVAILABLE;
             }
             else {
@@ -49,28 +51,18 @@ public class DisplayBot : MonoBehaviour
             }
         }
         else {
-            if(Player.runtimeMoney >= bot.discoverAmount) {
+            if(player.runtimeMoney >= bot.discoverAmount) {
                 bot.runtimeState = State.AVAILABLE;
             }
         }
     }
 
     public void Buy() {
-        Player.runtimeMoney -= bot.runtimeCost;
+        player.runtimeMoney -= bot.runtimeCost;
         bot.runtimeCount++;
         bot.runtimeCost *= 1.2f;
         countText.text = bot.runtimeCount.ToString();
         costText.text = PrintMoney(bot.runtimeCost);
-        //SpawnUpgrade();
-    }
-
-    void SpawnUpgrade() {
-        foreach(Upgrade upgrade in bot.upgrades) {
-            if(bot.runtimeCount >= upgrade.discoverCount) {
-                GameObject myUpgrade = (GameObject)Instantiate(upgradeButton, transform.position, Quaternion.identity, content.transform);
-                myUpgrade.GetComponent<DisplayUpgrade>().upgrade = upgrade;
-            }
-        }
     }
 
     public string PrintMoney(float money) {

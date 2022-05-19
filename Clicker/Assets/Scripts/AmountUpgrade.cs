@@ -6,5 +6,6 @@ using UnityEngine;
 public class AmountUpgrade : Upgrade  {
     public override void Buy() {
         this.bot.runtimeAmount *= 2f;
+        this.runtimeState = UpgradeState.PURCHASED;
     }
 }
