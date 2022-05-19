@@ -9,7 +9,7 @@ public class DisplayUpgrade : MonoBehaviour
     public Button button;
 
     public Upgrade upgrade;
-    public Player player;
+    //public Player player;
     
     void Update() {
         switch(upgrade.runtimeState) {
@@ -27,7 +27,7 @@ public class DisplayUpgrade : MonoBehaviour
                 break;
         }
         if(upgrade.runtimeState != State.UNDISCOVERED) {            
-            if(player.runtimeMoney < upgrade.runtimeCost) {
+            if(Player.runtimeMoney < upgrade.runtimeCost) {
                 upgrade.runtimeState = State.UNAVAILABLE;
             }
             else {
@@ -42,7 +42,7 @@ public class DisplayUpgrade : MonoBehaviour
     }
 
     public void Buy() {
-        player.runtimeMoney -= upgrade.runtimeCost;
+        Player.runtimeMoney -= upgrade.runtimeCost;
         this.upgrade.Buy();
     }
 

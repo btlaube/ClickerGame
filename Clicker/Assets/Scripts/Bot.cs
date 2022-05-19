@@ -8,6 +8,9 @@ public enum State {UNDISCOVERED, AVAILABLE, UNAVAILABLE};
 [CreateAssetMenu(fileName = "New Bot", menuName = "Bot")]
 public class Bot : ScriptableObject, ISerializationCallbackReceiver
 {
+
+    public List<Upgrade> upgrades = new List<Upgrade>();
+
     public new string name;
     public float discoverAmount;
 

@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19d8b69f8c0ef6a4b8918d49b47a937d, type: 3}
   m_Name: Bot01
   m_EditorClassIdentifier: 
+  upgrades:
+  - {fileID: 11400000, guid: e86529e464c90054c97f03e45dc6ac5e, type: 2}
+  - {fileID: 11400000, guid: 41d930ac713fa0945992b3105a12e91e, type: 2}
+  - {fileID: 11400000, guid: 7119a49570fab4e4d88f3a4b60d03d1a, type: 2}
   name: Bot 01
   discoverAmount: 0
   initialAmount: 0.014
   initialCost: 10
   initialState: 0
   initialCount: 0
-  runtimeAmount: 7.168
-  runtimeCost: 0.001955923
-  runtimeState: 1
-  runtimeCount: 33
+  runtimeAmount: 0.014
+  runtimeCost: 10
+  runtimeState: 0
+  runtimeCount: 0

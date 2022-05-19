@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 
+
+public enum UpgradeState {UNDISCOVERED, AVAILABLE, UNAVAILABLE, PURCHASED};
+
 public abstract class Upgrade : ScriptableObject, ISerializationCallbackReceiver
 {
 

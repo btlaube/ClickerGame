@@ -6,18 +6,20 @@ using UnityEngine.UI;
 public class DisplayBot : MonoBehaviour
 {
 
+    public GameObject upgradeButton;
+    public GameObject content;
+
     public CanvasGroup canvas;
     public Button button;
     
     public Bot bot;
-    public Player player;
 
     public Text nameText;    
     public Text costText;
     public Text countText;
 
     void Start() {
-        player.runtimeRate += bot.runtimeAmount * bot.runtimeCount;
+        Player.runtimeRate += bot.runtimeAmount * bot.runtimeCount;
         nameText.text = bot.name;
         countText.text = bot.runtimeCount.ToString();
         costText.text = PrintMoney(bot.runtimeCost);
@@ -39,7 +41,7 @@ public class DisplayBot : MonoBehaviour
                 break;
         }
         if(bot.runtimeState != State.UNDISCOVERED) {            
-            if(player.runtimeMoney < bot.runtimeCost) {
+            if(Player.runtimeMoney < bot.runtimeCost) {
                 bot.runtimeState = State.UNAVAILABLE;
             }
             else {
@@ -47,18 +49,28 @@ public class DisplayBot : MonoBehaviour
             }
         }
         else {
-            if(player.runtimeMoney >= bot.discoverAmount) {
+            if(Player.runtimeMoney >= bot.discoverAmount) {
                 bot.runtimeState = State.AVAILABLE;
             }
         }
     }
 
     public void Buy() {
-        player.runtimeMoney -= bot.runtimeCost;
+        Player.runtimeMoney -= bot.runtimeCost;
         bot.runtimeCount++;
         bot.runtimeCost *= 1.2f;
         countText.text = bot.runtimeCount.ToString();
         costText.text = PrintMoney(bot.runtimeCost);
+        //SpawnUpgrade();
+    }
+
+    void SpawnUpgrade() {
+        foreach(Upgrade upgrade in bot.upgrades) {
+            if(bot.runtimeCount >= upgrade.discoverCount) {
+                GameObject myUpgrade = (GameObject)Instantiate(upgradeButton, transform.position, Quaternion.identity, content.transform);
+                myUpgrade.GetComponent<DisplayUpgrade>().upgrade = upgrade;
+            }
+        }
     }
 
     public string PrintMoney(float money) {
