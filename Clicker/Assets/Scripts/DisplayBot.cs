@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DisplayBot : MonoBehaviour
 {
@@ -15,19 +16,24 @@ public class DisplayBot : MonoBehaviour
     public Bot bot;
     public Player player;
 
-    public Text nameText;    
-    public Text costText;
-    public Text countText;
+    public TMP_Text nameText;
+    public TMP_Text costText;
+    public TMP_Text rateText;
+    public TMP_Text countText;
+    public TMP_Text costLevelText;
+    public TMP_Text rateLevelText;
 
     void Start() {
         player.runtimeRate += bot.runtimeAmount * bot.runtimeCount;
         nameText.text = bot.name;
-        countText.text = bot.runtimeCount.ToString();
-        costText.text = PrintMoney(bot.runtimeCost);
+        // countText.text = bot.runtimeCount.ToString();
+        // rateText.text = PrintRate(bot.runtimeAmount);
+        // costText.text = "x" + PrintMoney(bot.runtimeCost);
+        UpdateDisplay();
     }
 
     void Update() {
-        costText.text = PrintMoney(bot.runtimeCost);
+        // costText.text = PrintMoney(bot.runtimeCost);
         switch(bot.runtimeState) {
             case State.UNDISCOVERED:
                 canvas.alpha = 0;
@@ -55,23 +61,64 @@ public class DisplayBot : MonoBehaviour
                 bot.runtimeState = State.AVAILABLE;
             }
         }
+        // Update display if an upgrade was purchased
+        if (bot.updateDisplay) {
+            UpdateDisplay();
+            bot.updateDisplay = false;
+        }
     }
 
     public void Buy() {
         player.runtimeMoney -= bot.runtimeCost;
         bot.runtimeCount++;
         bot.runtimeCost *= 1.2f;
-        countText.text = bot.runtimeCount.ToString();
-        costText.text = PrintMoney(bot.runtimeCost);
+        UpdateDisplay();
     }
 
-    public string PrintMoney(float money) {
-        return "$" + (Mathf.Round(money * 100.0f) * 0.01f).ToString();
+    private static readonly string[] moneySuffixes =
+    {
+        "", "K", "M", "B", "T", "Qa", "Qi", "Sx", "Sp", "Oc", "No"
+    };
+
+    public string PrintMoney(double money)
+    {
+        if (money < 1000)
+            return "$" + money.ToString("F2");
+
+        int tier = 0;
+
+        while (money >= 1000 && tier < moneySuffixes.Length - 1)
+        {
+            money /= 1000;
+            tier++;
+        }
+
+        return $"${money:0.##}{moneySuffixes[tier]}";
+    }
+
+
+    public string PrintRate(double money)
+    {
+        if (money < 1000)
+            return "$" + money.ToString("F2") + "/s";
+
+        int tier = 0;
+
+        while (money >= 1000 && tier < moneySuffixes.Length - 1)
+        {
+            money /= 1000;
+            tier++;
+        }
+
+        return $"${money:0.##}{moneySuffixes[tier]}";
     }
 
     public void UpdateDisplay() {
-        countText.text = bot.runtimeCount.ToString();
         costText.text = PrintMoney(bot.runtimeCost);
+        rateText.text = PrintRate(bot.runtimeAmount);
+        countText.text = "x" + bot.runtimeCount.ToString();
+        costLevelText.text = "Lvl. " + bot.runtimeCostUpgradeLevel.ToString();
+        rateLevelText.text = "Lvl. " + bot.runtimeRateUpgradeLevel.ToString();
     }
 
 }

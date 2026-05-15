@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efa9577493dc8b744991014ce2dd280e, type: 3}
+  m_Name: ClickUpgrade
+  m_EditorClassIdentifier: 
+  playerDisplay: {fileID: 0}
+  botDisplay: {fileID: 0}
+  player: {fileID: 11400000, guid: 8f1d43df7ba78dc45960e773bfbe8cb4, type: 2}
+  description: Upgrade click
+  bot: {fileID: 0}
+  initialDiscoverCount: 11
+  initialCost: 12
+  initialState: 0
+  runtimeDiscoverCount: 9.448928e+10
+  runtimeCost: 18932.66
+  runtimeState: 0

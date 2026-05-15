@@ -24,6 +24,15 @@ public class Bot : ScriptableObject, ISerializationCallbackReceiver
     public State runtimeState;
     public int runtimeCount;
 
+    public bool updateDisplay = false;
+    public int initialTimesUpgraded = 1;
+    public int runtimeTimesUpgraded;
+
+    public int initialCostUpgradeLevel = 1;
+    public int runtimeCostUpgradeLevel;
+    public int initialRateUpgradeLevel = 1;
+    public int runtimeRateUpgradeLevel;
+
     public void TestSetState(State state) {
         this.runtimeState = state;
     }
@@ -33,7 +42,14 @@ public class Bot : ScriptableObject, ISerializationCallbackReceiver
         runtimeCost = initialCost;
         runtimeCount = initialCount;
         runtimeState = initialState;
+        runtimeTimesUpgraded = initialTimesUpgraded;
+        runtimeCostUpgradeLevel = initialCostUpgradeLevel;
+        runtimeRateUpgradeLevel = initialRateUpgradeLevel;
     }
 
     public void OnBeforeSerialize() { }
+
+    public void UpgradePurchased() {
+        updateDisplay = true;
+    }
 }
